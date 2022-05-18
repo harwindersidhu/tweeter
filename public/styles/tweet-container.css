@@ -14,6 +14,7 @@ article header {
   justify-content: space-between;
   height: auto;
   background-color: #f4f1ec;
+  margin-top: 0px;
 }
 
 .UserAvatarAndName {
