@@ -1,7 +1,11 @@
+#tweets-container {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .tweet-container {
   border: 4px solid black;
   margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 .tweet-container:hover {
