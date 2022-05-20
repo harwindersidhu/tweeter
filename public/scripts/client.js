@@ -36,33 +36,45 @@ $(document).ready(function() {
   
   const renderTweets = function(tweets) {
     // loops through tweets
-    for (let tweetData of tweets) {
+    tweets.slice().reverse().forEach(tweetData => {
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
       const $tweet = createTweetElement(tweetData);
       $('#tweets-container').append($tweet);
-    } 
+    });
   }
   
-  const loadtweets = function() {
+  const loadtweets = function(pageRefreshed) {
     $.ajax("/tweets", { method: 'GET' })
       .then(function(data) {
-        console.log(data);
-        renderTweets(data);
+        if (pageRefreshed) {
+          renderTweets(data);
+        } else {
+          const $tweet = createTweetElement(data[data.length-1]);
+          $('#tweets-container').prepend($tweet);
+        }
+        
       })
   }
 
-  loadtweets();
+  loadtweets(true);
 
   $("#addTweetForm").submit(function(event) {
-    let tweet = $(this).serialize();
-    console.log(tweet);
-    
-    $.ajax("/tweets", { method: 'POST', data: tweet })
-      .then(function(data) {
-        console.log("Data: " + data);
+    if (!($("#tweet-text").val().length)) {
+      alert("Tweet can not be empty string.")
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Tweet can not exceeds 140 characters.")
+    } else {
+      let tweet = $(this).serialize();
+      console.log(tweet);
+      
+      $.ajax("/tweets", { method: 'POST', data: tweet })
+        .then(function(data) {
+          $("#tweet-text").val("");
+          $("#addTweetForm").find("output").val(140).css({"color": "#545149"});
+          loadtweets(false);
       });
-
+    }
     event.preventDefault();
   })
 });
