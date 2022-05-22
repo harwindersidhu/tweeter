@@ -67,10 +67,13 @@ $(document).ready(function() {
 
   $("#addTweetForm").submit(function(event) {
     if (!($("#tweet-text").val().length)) {
-      alert("Tweet can not be empty string.")
+      $("#error").html("<i class='fa-solid fa-triangle-exclamation'></i> Tweet can not be a empty string. <i class='fa-solid fa-triangle-exclamation'></i>").css({"display": "block"});
+      // alert("Tweet can not be empty string.")
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Tweet can not exceeds 140 characters.")
+      $("#error").html("<i class='fa-solid fa-triangle-exclamation'></i> Too long. Please respect our arbitrary limit of 140 characters. <i class='fa-solid fa-triangle-exclamation'></i>").css({"display": "block"});
+      // alert("Tweet can not exceeds 140 characters.")
     } else {
+      $("#error").html("").css({"display": "none"});
       let tweet = $(this).serialize();
       console.log(tweet);
       
