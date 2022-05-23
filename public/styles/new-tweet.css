@@ -1,3 +1,7 @@
+.new-tweet {
+  display: none;
+}
+
 #error {
   display: none;
   margin-top: 50px;
@@ -24,6 +28,10 @@ form div {
 form button {
   background-color: #4152A1;
   color: #FFFFFF;
+}
+
+form button:active {
+  box-shadow: 0 0 0 4px #5a01a7;
 }
 
 #tweet-text {

@@ -22,3 +22,12 @@ nav {
 nav i {
   color: red;
 }
+
+#createNewTweet {
+  background-color: transparent;
+  border: none;
+}
+
+#createNewTweet:hover {
+  transform: translateY(8px);
+}

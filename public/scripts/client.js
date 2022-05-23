@@ -86,4 +86,15 @@ $(document).ready(function() {
     }
     event.preventDefault();
   })
+
+  $("#createNewTweet").click(function() {
+    console.log("Button clicked.");
+    if($(".new-tweet").is(":visible")) {
+      $(".new-tweet").slideUp("slow");
+    } else {
+      $(".new-tweet").slideDown("slow");
+      $("#tweet-text").focus();
+    }
+    
+  })
 });
