@@ -30,3 +30,20 @@ main {
   margin: auto;
   background-color: #f4f1ec;
 }
+
+#scrollToTopButton {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  border-color: transparent;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+}
+
+#scrollToTopButton:hover {
+  box-shadow: 0 0 0 4px #670d2f;
+}

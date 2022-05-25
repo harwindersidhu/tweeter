@@ -94,7 +94,22 @@ $(document).ready(function() {
     } else {
       $(".new-tweet").slideDown("slow");
       $("#tweet-text").focus();
+    } 
+  });
+
+  $(document).scroll(function() {
+    if ($(window).scrollTop() > 0) {
+      $("#scrollToTopButton").css({"display": "block"});
+      $(".navRightDiv").css({"display": "none"});
+    } else {
+      $("#scrollToTopButton").css({"display": "none"});
+      $(".navRightDiv").css({"display": "flex"});
     }
     
-  })
+  });
+
+  $("#scrollToTopButton").click(function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    $("#tweet-text").focus();
+  });
 });
