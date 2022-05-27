@@ -38,6 +38,7 @@ article header {
 
 p {
   word-wrap: break-word;
+  font-weight: bold;
 }
 
 .UserHandle {

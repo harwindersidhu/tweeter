@@ -47,3 +47,26 @@ main {
 #scrollToTopButton:hover {
   box-shadow: 0 0 0 4px #670d2f;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    float: left;
+    width: 31%;
+    margin-top: 170px;
+    margin-left: 3%;
+    margin-right: 6%;
+  }
+
+  .container {
+    float: right;
+    width: 54%;
+    margin-top: 120px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  nav {
+    background-color: #4056A1;
+  }
+}

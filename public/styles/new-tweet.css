@@ -15,8 +15,9 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-family: Bungee, sans-serif;
+  /* font-family: Bungee, sans-serif; */
   margin-top: 50px;
+  font-weight: bold;
 }
 
 form div {
@@ -28,6 +29,7 @@ form div {
 form button {
   background-color: #4152A1;
   color: #FFFFFF;
+  font-family: Bungee, sans-serif;
 }
 
 form button:active {

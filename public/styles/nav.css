@@ -1,7 +1,6 @@
 nav {
-  font-family: Bungee, sans-serif;
   height: 120px;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -11,6 +10,11 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
+}
+
+nav span {
+  font-family: Bungee, sans-serif;
 }
 
 .navRightDiv {
