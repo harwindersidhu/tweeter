@@ -69,4 +69,14 @@ main {
   nav {
     background-color: #4056A1;
   }
+
+  .profile-image img{
+    height: 15rem;
+    width: auto;
+  }
+
+  .profile-name {
+    position: relative;
+    top: 0%;
+  }
 }
