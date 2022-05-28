@@ -11,7 +11,7 @@ Tweeter is a simple, single-page Ajax-based Twitter clone that uses jQuery, HTML
 - Fetching tweets with AJAX.
 - New tweet is visible at the top.
 - Validation errors in form with jQuery.
-- Character counnter when writing tweet.
+- Character counter when writing tweet.
 - Responsive design
 - Use of SASS variables to store applications colors and fonts, and nesting.
 
