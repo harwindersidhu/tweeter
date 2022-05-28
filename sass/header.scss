@@ -1,0 +1,24 @@
+$header-background-color: #D89E30;
+$text-color: #FFFFFF;
+
+.main-header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $header-background-color;
+  color:$text-color;
+  position: relative;
+}
+
+.profile-image img{
+  height: 12rem;
+  width: auto;
+}
+
+.profile-name {
+  position: absolute;
+  top: 70%;
+}

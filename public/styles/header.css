@@ -6,12 +6,11 @@
   justify-content: center;
   align-items: center;
   background-color: #D89E30;
-  color:#FFFFFF;
+  color: #FFFFFF;
   position: relative;
-  /* margin-top: 120px; */
 }
 
-.profile-image img{
+.profile-image img {
   height: 12rem;
   width: auto;
 }

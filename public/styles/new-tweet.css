@@ -15,7 +15,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* font-family: Bungee, sans-serif; */
   margin-top: 50px;
   font-weight: bold;
 }
@@ -23,7 +22,6 @@ form {
 form div {
   display: flex;
   justify-content: space-between;
-
 }
 
 form button {

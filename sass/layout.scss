@@ -3,10 +3,18 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+$font-stack: Source Sans Pro, sans-serif;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$body-font-size: 24px;
+$scrollToTopButton-background-color: red;
+$scrollToTopButton-text-color: white;
+$scrollToTopButton-hover: #670d2f;
+
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,28 +22,30 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  font-family: Source Sans Pro, sans-serif;
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  font-family: $font-stack;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  font-size: $body-font-size;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 90%;
   margin: auto;
-  background-color: #f4f1ec;
+  background-color: $body-background-color;
 }
 
 #scrollToTopButton {
   height: 3em;
   width: 3em;
   border-radius: 50%;
-  background-color: red;
-  color: white;
+  background-color: $scrollToTopButton-background-color;
+  color: $scrollToTopButton-text-color;
   border-color: transparent;
   position: fixed;
   bottom: 2rem;
@@ -44,7 +54,7 @@ main {
 }
 
 #scrollToTopButton:hover {
-  box-shadow: 0 0 0 4px #670d2f;
+  box-shadow: 0 0 0 4px $scrollToTopButton-hover;
 }
 
 /* Desktop styles */
@@ -69,7 +79,7 @@ main {
     background-color: #4056A1;
   }
 
-  .profile-image img {
+  .profile-image img{
     height: 15rem;
     width: auto;
   }

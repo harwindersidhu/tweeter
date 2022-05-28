@@ -11,6 +11,11 @@ $(document).ready(function() {
     return div.innerHTML;
   };
   
+  /**
+   * 
+   * @param {*} tweetData This is tweet object containing all information about tweet
+   * @returns DOM created from given tweet object
+   */
   const createTweetElement = function(tweetData) {
     const tweet = `
       <article class="tweet-container">
@@ -38,8 +43,13 @@ $(document).ready(function() {
     `;
 
     return tweet;
-  }
+  };
   
+
+  /**
+   * Given the arrays of tweets objects, it loop through each tweet object to make DOM from that tweet 
+   * and then appends to tweets-container DOM element.
+   */
   const renderTweets = function(tweets) {
     // loops through tweets
     tweets.slice().reverse().forEach(tweetData => {
@@ -48,8 +58,13 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweetData);
       $('#tweets-container').append($tweet);
     });
-  }
+  };
   
+
+  /**
+   * This function loads tweet in tweets-container DOM element
+   * @param {*} pageRefreshed Boolean value that tells page is refreshed or not
+   */
   const loadtweets = function(pageRefreshed) {
     $.ajax("/tweets", { method: 'GET' })
       .then(function(data) {
@@ -58,13 +73,15 @@ $(document).ready(function() {
         } else {
           const $tweet = createTweetElement(data[data.length-1]);
           $('#tweets-container').prepend($tweet);
-        }
-        
-      })
-  }
+        } 
+      });
+  };
 
   loadtweets(true);
 
+  /**
+   * Ajax function to handle new posted tweet
+   */
   $("#addTweetForm").submit(function(event) {
     if (!($("#tweet-text").val().length)) {
       $("#error").html("<i class='fa-solid fa-triangle-exclamation'></i> Tweet can not be a empty string. <i class='fa-solid fa-triangle-exclamation'></i>").css({"display": "block"});
@@ -75,7 +92,6 @@ $(document).ready(function() {
     } else {
       $("#error").html("").css({"display": "none"});
       let tweet = $(this).serialize();
-      console.log(tweet);
       
       $.ajax("/tweets", { method: 'POST', data: tweet })
         .then(function(data) {
@@ -87,8 +103,11 @@ $(document).ready(function() {
     event.preventDefault();
   })
 
+  /**
+   * If form to post new tweet is hidden, clicking createNewTweet button will make the form visible,
+   * if form was already visible, clicking this button will hide this form.
+   */
   $("#createNewTweet").click(function() {
-    console.log("Button clicked.");
     if($(".new-tweet").is(":visible")) {
       $(".new-tweet").slideUp("slow");
     } else {
@@ -97,6 +116,10 @@ $(document).ready(function() {
     } 
   });
 
+  /**
+   * If page is scrolled down, the createNewTweet button will be hidden and scrollToTopButton will be visible,
+   * if page is scrolled to top, scrollToTopButton will be hidden and createNewTweet button will be visible.
+   */
   $(document).scroll(function() {
     if ($(window).scrollTop() > 0) {
       $("#scrollToTopButton").css({"display": "block"});
@@ -108,6 +131,9 @@ $(document).ready(function() {
     
   });
 
+  /**
+   * Page will be scrolled back to top, after clicking scrollToTopButton which is fixed at bottom right corner of window.
+   */
   $("#scrollToTopButton").click(function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
     $("#tweet-text").focus();
